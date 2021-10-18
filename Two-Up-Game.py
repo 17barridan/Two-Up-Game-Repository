@@ -15,13 +15,11 @@ Have the player choose to gamble on:
  4. The coin toss must be randomised
 
  Possible program functions:
- 1. Toss coins - 17Barridan
- 2.Get guess - DEEBAZZ
- 3.Generate coins result - 17Barridan
- 4. Determine win/loss - DEEBAZZ
+ 1. Toss coins - DEEBAZZ890
+ 2.Get guess - 17barridan
+ 3. Generate coins result - DEEBAZZ890
+ 4. Determine win/loss - DEEBAZZ890
 
- Notes:
- * somehow you need to convert the user input to numbers relative to the possible results
 """
 
 import random
@@ -46,9 +44,17 @@ def retrieveGuess():
     return playerBet
 
 
+def gameResult(playerBet, coinToss):
+    if playerBet == coinToss:
+        print("Congratulations, you win!")
+    else:
+        print("Tough luck, you have lost!")
+
+
 def main():
     coinToss = tossCoins()
     playerBet = retrieveGuess()
+    gameResult(playerBet, coinToss)
 
 
 if __name__ == "__main__":
