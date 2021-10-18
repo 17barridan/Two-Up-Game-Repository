@@ -32,9 +32,23 @@ def tossCoins():
     return coinToss
 
 
+def retrieveGuess():
+    playerPrediction = input(
+        "Please enter the corresponding letter pair to the bet you wish to place:\nHH - Both coins are Heads, "
+        "TT - Both are tails, or HT - One of each\nEnter Bet --> ")
+    playerPrediction.upper()
+    if playerPrediction == "HH":
+        playerBet = 1
+    elif playerPrediction == "TT":
+        playerBet = 2
+    else:
+        playerBet = 3
+    return playerBet
+
+
 def main():
     coinToss = tossCoins()
-    print(coinToss)
+    playerBet = retrieveGuess()
 
 
 if __name__ == "__main__":
